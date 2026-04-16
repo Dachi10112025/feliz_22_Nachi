@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap');
 
 /* ------------------------------
-   VARIABLES CSS (colores del boceto y fuente)
+   VARIABLES CSS
 --------------------------------- */
 :root {
     --rosa-intenso: #E63976;
@@ -15,7 +15,6 @@
     --rojo-vibrante: #C70039;
     --amarillo-estrella: #FFD966;
     --sombra-suave: rgba(0, 0, 0, 0.2);
-    /* FUENTE PRINCIPAL: Cormorant Unicase (estilo medieval/romántico) */
     --fuente-principal: 'Cormorant Unicase', 'Georgia', 'Times New Roman', serif;
 }
 
@@ -70,7 +69,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    transition: transform 0.8s ease, opacity 0.5s ease;
+    transition: transform 4.5s cubic-bezier(0.2, 0.9, 0.4, 1), opacity 2s ease;
     z-index: 20;
 }
 
@@ -95,8 +94,8 @@ body {
     background: var(--rosa-intenso);
     clip-path: polygon(0% 0%, 100% 0%, 50% 45%);
     transform-origin: top;
-    /* ANIMACIÓN MÁS LENTA Y FLUIDA: 1.2s con curva ease-in-out */
-    transition: transform 1.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    /* ANIMACIÓN LENTA: 4 SEGUNDOS */
+    transition: transform 4s cubic-bezier(0.4, 0.0, 0.2, 1);
     z-index: 3;
     border-radius: 12px 12px 0 0;
     background-image: linear-gradient(135deg, rgba(255,255,220,0.2) 0%, rgba(0,0,0,0.05) 100%);
@@ -237,7 +236,7 @@ body {
 }
 
 .carta-entrada {
-    animation: slideUpFade 1s ease-out;
+    animation: slideUpFade 1.5s ease-out;
 }
 @keyframes slideUpFade {
     from {

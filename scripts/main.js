@@ -27,7 +27,6 @@ const CONTENIDO_CARTA = `
 let audioElement = document.getElementById('musicaFondo');
 let videoBg = document.getElementById('bg-video');
 
-// Elementos DOM
 const sobreWrapper = document.getElementById('sobreWrapper');
 const sobreAnimado = document.getElementById('sobreAnimado');
 const sello = document.getElementById('selloClick');
@@ -35,31 +34,35 @@ const cartaContainer = document.getElementById('cartaContainer');
 
 let isOpen = false;
 
-// Función para forzar la reproducción del audio (autoplay real)
 function iniciarAudioAutomatico() {
     if (audioElement) {
         audioElement.play().then(() => {
             console.log("🎵 Audio en loop reproducido automáticamente");
         }).catch(err => {
-            console.warn("Autoplay bloqueado por el navegador. Se necesita interacción del usuario para activar el sonido.");
+            console.warn("Autoplay bloqueado. Se necesita interacción.");
         });
     }
 }
 
-// Abrir la carta
 function abrirCarta() {
     if (isOpen) return;
     isOpen = true;
 
+    // 1. Quitar el pulso inmediatamente para que no interfiera
+    sobreAnimado.classList.remove('pulso');
+    // 2. Iniciar animación de la solapa (muy lenta, 4 segundos)
     sobreAnimado.classList.add('abierto');
 
+    // 3. Esperar 4.5 segundos (para que la solapa termine y el sobre se mueva)
     setTimeout(() => {
+        // Mover el wrapper del sobre hacia arriba (transición lenta definida en CSS)
         sobreWrapper.classList.add('sobre-arriba');
-        sobreAnimado.classList.remove('pulso');
 
+        // Mostrar el contenedor de la carta (invisible aún)
         cartaContainer.style.display = 'block';
         cartaContainer.style.opacity = '0';
 
+        // Inyectar el contenido de la carta
         cartaContainer.innerHTML = `
             <div class="modo-lectura">
                 <div class="carta-pergamino" id="pergaminoDinamico">
@@ -70,31 +73,29 @@ function abrirCarta() {
             </div>
         `;
 
+        // Pequeña pausa adicional para que el DOM se actualice y luego hacer fade in
         setTimeout(() => {
-            cartaContainer.style.transition = 'opacity 0.6s ease';
+            cartaContainer.style.transition = 'opacity 1.2s ease';
             cartaContainer.style.opacity = '1';
             const pergaminoElem = document.querySelector('.carta-pergamino');
             if (pergaminoElem) pergaminoElem.classList.add('carta-entrada');
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }, 50);
-
-    }, 400);
+        }, 100);
+    }, 4500); // 4.5 segundos, sincronizado con la animación lenta
 }
 
 function handleFirstInteraction() {
     if (audioElement && audioElement.paused) {
-        audioElement.play().catch(e => console.log("Audio requiere interacción explícita"));
+        audioElement.play().catch(e => console.log("Audio requiere interacción"));
     }
     abrirCarta();
     sello.removeEventListener('click', handleFirstInteraction);
     sobreAnimado.removeEventListener('click', handleFirstInteraction);
 }
 
-// Eventos de apertura
 sello.addEventListener('click', handleFirstInteraction);
 sobreAnimado.addEventListener('click', handleFirstInteraction);
 
-// Apertura con scroll
 let scrollThresholdReached = false;
 window.addEventListener('wheel', function(e) {
     if (!isOpen && !scrollThresholdReached && Math.abs(e.deltaY) > 80) {
@@ -110,14 +111,12 @@ window.addEventListener('wheel', function(e) {
     }
 });
 
-// Precarga del video e intento de autoplay de audio al cargar la página
 window.addEventListener('load', () => {
-    if (videoBg) videoBg.play().catch(e => console.log("Video autoplay posiblemente bloqueado"));
+    if (videoBg) videoBg.play().catch(e => console.log("Video autoplay bloqueado"));
     iniciarAudioAutomatico();
-    console.log("✨ Carta de amor lista. Haz clic en el sello para abrirla. El audio intentará sonar automáticamente. ✨");
+    console.log("✨ Carta de amor lista. Haz clic en el sello para abrirla lentamente (4.5 segundos de animación). ✨");
 });
 
-// Si el usuario hace clic en cualquier parte, reactivamos el audio por si estaba silenciado
 document.body.addEventListener('click', function() {
     if (audioElement && audioElement.paused) {
         audioElement.play().catch(e => console.log("Aún no se puede reproducir el audio"));
