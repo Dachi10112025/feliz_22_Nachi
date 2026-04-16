@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Carta de Amor | Danchi para Nath 🌹</title>
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="./Assets/style.css">
+</head>
+<body>
+
+    <!-- VIDEO FONDO MP4 (loop, silenciado) -->
+    <video id="bg-video" autoplay loop muted playsinline>
+        <source src="Assets/mp4/1_background_rose_smoke.mp4" type="video/mp4">
+        <!-- fallback: si no existe, no se rompe la experiencia -->
+    </video>
+    <div class="overlay-bg"></div>
+
+    <!-- AUDIO: canción de piano "congratulations" (placeholder) -->
+    <audio id="musicaFondo" loop preload="auto">
+        <source src="Assets/audio/congratulations-piano.mp3" type="audio/mpeg">
+        <!-- El usuario reemplazará con el archivo real -->
+    </audio>
+
+    <div class="container" id="appContainer">
+        <!-- SOBRE INICIAL -->
+        <div id="sobreWrapper" class="sobre-wrapper">
+            <div id="sobreAnimado" class="sobre pulso">
+                <div class="solapa"></div>
+                <div class="sello-estrella" id="selloClick"></div>
+            </div>
+        </div>
+
+        <!-- CONTENEDOR DONDE APARECERÁ LA CARTA (inicialmente vacío) -->
+        <div id="cartaContainer" style="width:100%; display: none;"></div>
+    </div>
+
+    <!-- JavaScript externo -->
+    <script src="./scripts/main.js" defer></script>
+</body>
+</html>
