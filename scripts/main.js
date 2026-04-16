@@ -1,6 +1,4 @@
 // ========================  CARTA FINITA (sin scroll infinito) ========================
-// Contenido estático y completo de la carta
-
 const CONTENIDO_CARTA = `
     <p>Dearest Nath,</p>
     <p>Desde el momento en que tus ojos cruzaron los míos, el mundo cobró un color que nunca supe que existía. No fue casualidad, fue un susurro del universo que me señalaba el camino hacia ti. Cada latido de mi corazón aprendió un nuevo idioma: el tuyo. Y desde entonces, sólo sé hablar de amor en tu nombre.</p>
@@ -26,8 +24,6 @@ const CONTENIDO_CARTA = `
     <div class="firma-final">Con devoción eterna,<br>Tu Danchi. ❤️</div>
 `;
 
-// Variables de control
-let musicaActivada = false;
 let audioElement = document.getElementById('musicaFondo');
 let videoBg = document.getElementById('bg-video');
 
@@ -39,36 +35,32 @@ const cartaContainer = document.getElementById('cartaContainer');
 
 let isOpen = false;
 
-// Función para reproducir música (requiere interacción del usuario)
-function activarMusica() {
-    if (!musicaActivada && audioElement) {
+// Función para forzar la reproducción del audio (autoplay real)
+function iniciarAudioAutomatico() {
+    if (audioElement) {
         audioElement.play().then(() => {
-            musicaActivada = true;
-            console.log("🎵 Música de piano comenzó");
+            console.log("🎵 Audio en loop reproducido automáticamente");
         }).catch(err => {
-            console.warn("El navegador requiere interacción explícita.");
+            console.warn("Autoplay bloqueado por el navegador. Se necesita interacción del usuario para activar el sonido.");
+            // Mostrar un mensaje sutil en la consola, pero no interrumpir la experiencia
         });
     }
 }
 
-// Abrir la carta y mostrar el contenido estático
+// Abrir la carta
 function abrirCarta() {
     if (isOpen) return;
     isOpen = true;
 
-    // Animación de la solapa
     sobreAnimado.classList.add('abierto');
 
     setTimeout(() => {
-        // Mover el sobre hacia arriba y reducir tamaño
         sobreWrapper.classList.add('sobre-arriba');
         sobreAnimado.classList.remove('pulso');
 
-        // Mostrar el contenedor de la carta
         cartaContainer.style.display = 'block';
         cartaContainer.style.opacity = '0';
 
-        // Inyectar el contenido fijo de la carta
         cartaContainer.innerHTML = `
             <div class="modo-lectura">
                 <div class="carta-pergamino" id="pergaminoDinamico">
@@ -79,7 +71,6 @@ function abrirCarta() {
             </div>
         `;
 
-        // Animación de entrada
         setTimeout(() => {
             cartaContainer.style.transition = 'opacity 0.6s ease';
             cartaContainer.style.opacity = '1';
@@ -91,9 +82,11 @@ function abrirCarta() {
     }, 400);
 }
 
-// Manejador de apertura (clic en sello o sobre)
 function handleFirstInteraction() {
-    activarMusica();
+    // Aseguramos que el audio suene si aún no lo ha hecho
+    if (audioElement && audioElement.paused) {
+        audioElement.play().catch(e => console.log("Audio requiere interacción explícita"));
+    }
     abrirCarta();
     sello.removeEventListener('click', handleFirstInteraction);
     sobreAnimado.removeEventListener('click', handleFirstInteraction);
@@ -103,13 +96,15 @@ function handleFirstInteraction() {
 sello.addEventListener('click', handleFirstInteraction);
 sobreAnimado.addEventListener('click', handleFirstInteraction);
 
-// Apertura opcional con scroll (si el usuario hace scroll antes de hacer clic)
+// Apertura con scroll
 let scrollThresholdReached = false;
 window.addEventListener('wheel', function(e) {
     if (!isOpen && !scrollThresholdReached && Math.abs(e.deltaY) > 80) {
         scrollThresholdReached = true;
         if (!isOpen) {
-            activarMusica();
+            if (audioElement && audioElement.paused) {
+                audioElement.play().catch(e => console.log("Audio necesita interacción"));
+            }
             abrirCarta();
             sello.removeEventListener('click', handleFirstInteraction);
             sobreAnimado.removeEventListener('click', handleFirstInteraction);
@@ -117,15 +112,16 @@ window.addEventListener('wheel', function(e) {
     }
 });
 
-// Precargar video y mostrar mensaje en consola
+// Precarga del video e intento de autoplay de audio al cargar la página
 window.addEventListener('load', () => {
-    if (videoBg) videoBg.play().catch(e => console.log("Autoplay de video no permitido, pero el usuario puede verlo al interactuar"));
-    console.log("✨ Carta de amor lista. Haz clic en el sello para abrirla ✨");
+    if (videoBg) videoBg.play().catch(e => console.log("Video autoplay posiblemente bloqueado"));
+    iniciarAudioAutomatico();  // Intento de reproducción automática del audio
+    console.log("✨ Carta de amor lista. Haz clic en el sello para abrirla. El audio intentará sonar automáticamente. ✨");
 });
 
-// Activar música con cualquier clic en la página (para cumplir políticas de autoplay)
+// Si el usuario hace clic en cualquier parte, reactivamos el audio por si estaba silenciado
 document.body.addEventListener('click', function() {
-    if (!musicaActivada && !isOpen) {
-        activarMusica();
+    if (audioElement && audioElement.paused) {
+        audioElement.play().catch(e => console.log("Aún no se puede reproducir el audio"));
     }
-}, { once: true });
+});
