@@ -1,3 +1,11 @@
+/* ------------------------------
+   IMPORTA LA FUENTE DE GOOGLE
+--------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap');
+
+/* ------------------------------
+   VARIABLES CSS (colores del boceto y fuente)
+--------------------------------- */
 :root {
     --rosa-intenso: #E63976;
     --rosa-suave: #F9B2D7;
@@ -7,6 +15,8 @@
     --rojo-vibrante: #C70039;
     --amarillo-estrella: #FFD966;
     --sombra-suave: rgba(0, 0, 0, 0.2);
+    /* FUENTE PRINCIPAL: Cormorant Unicase (estilo medieval/romántico) */
+    --fuente-principal: 'Cormorant Unicase', 'Georgia', 'Times New Roman', serif;
 }
 
 * {
@@ -17,7 +27,7 @@
 }
 
 body {
-    font-family: 'Georgia', 'Times New Roman', 'Palatino', serif;
+    font-family: var(--fuente-principal);
     background-color: #2c1a12;
     min-height: 100vh;
     overflow-x: hidden;
@@ -85,7 +95,8 @@ body {
     background: var(--rosa-intenso);
     clip-path: polygon(0% 0%, 100% 0%, 50% 45%);
     transform-origin: top;
-    transition: transform 0.5s ease-in-out;
+    /* ANIMACIÓN MÁS LENTA Y FLUIDA: 1.2s con curva ease-in-out */
+    transition: transform 1.2s cubic-bezier(0.4, 0.0, 0.2, 1);
     z-index: 3;
     border-radius: 12px 12px 0 0;
     background-image: linear-gradient(135deg, rgba(255,255,220,0.2) 0%, rgba(0,0,0,0.05) 100%);
@@ -178,7 +189,7 @@ body {
 }
 
 .texto-infinito {
-    font-family: 'Georgia', 'Times New Roman', serif;
+    font-family: var(--fuente-principal);
     color: var(--marron-oscuro);
     line-height: 1.75;
     font-size: 1.12rem;
@@ -188,7 +199,7 @@ body {
     margin-bottom: 1.4rem;
 }
 .texto-infinito h2 {
-    font-family: 'Segoe UI', cursive;
+    font-family: var(--fuente-principal);
     color: var(--purpura);
     text-align: center;
     margin: 2rem 0 1rem;
@@ -210,7 +221,7 @@ body {
     font-size: 1.2rem;
     border-top: 1px dashed #c7a47b;
     padding-top: 1rem;
-    font-family: 'Brush Script MT', cursive;
+    font-family: var(--fuente-principal);
     color: var(--purpura);
 }
 
@@ -226,7 +237,7 @@ body {
 }
 
 .carta-entrada {
-    animation: slideUpFade 0.8s ease-out;
+    animation: slideUpFade 1s ease-out;
 }
 @keyframes slideUpFade {
     from {

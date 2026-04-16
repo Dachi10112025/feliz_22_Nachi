@@ -42,7 +42,6 @@ function iniciarAudioAutomatico() {
             console.log("🎵 Audio en loop reproducido automáticamente");
         }).catch(err => {
             console.warn("Autoplay bloqueado por el navegador. Se necesita interacción del usuario para activar el sonido.");
-            // Mostrar un mensaje sutil en la consola, pero no interrumpir la experiencia
         });
     }
 }
@@ -83,7 +82,6 @@ function abrirCarta() {
 }
 
 function handleFirstInteraction() {
-    // Aseguramos que el audio suene si aún no lo ha hecho
     if (audioElement && audioElement.paused) {
         audioElement.play().catch(e => console.log("Audio requiere interacción explícita"));
     }
@@ -115,7 +113,7 @@ window.addEventListener('wheel', function(e) {
 // Precarga del video e intento de autoplay de audio al cargar la página
 window.addEventListener('load', () => {
     if (videoBg) videoBg.play().catch(e => console.log("Video autoplay posiblemente bloqueado"));
-    iniciarAudioAutomatico();  // Intento de reproducción automática del audio
+    iniciarAudioAutomatico();
     console.log("✨ Carta de amor lista. Haz clic en el sello para abrirla. El audio intentará sonar automáticamente. ✨");
 });
 
