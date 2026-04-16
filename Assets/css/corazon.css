@@ -1,0 +1,116 @@
+/* Estilos para la sección final: promesa, corazón animado y firma */
+.promesa-final {
+    margin: 2rem 0 1.5rem;
+    padding: 1rem;
+    background: rgba(253, 246, 227, 0.5);
+    border-left: 4px solid var(--rosa-intenso);
+    border-radius: 12px;
+    font-style: italic;
+    font-size: 1.1rem;
+    text-align: center;
+    font-family: var(--fuente-principal);
+    color: var(--marron-oscuro);
+}
+
+.corazon-final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0 2rem;
+}
+
+/* Corazón dibujado con CSS */
+.corazon-css {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    margin-bottom: 1.5rem;
+    animation: latidoSuave 1.2s ease infinite;
+}
+
+.corazon-css::before,
+.corazon-css::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background: var(--rosa-intenso);
+    transition: background 0.5s ease;
+}
+
+.corazon-css::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.corazon-css::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+/* Animación de cambio de color (transición suave) */
+@keyframes cambioColor {
+    0% { background: var(--rosa-intenso); }
+    25% { background: var(--purpura); }
+    50% { background: var(--rojo-vibrante); }
+    75% { background: var(--amarillo-estrella); }
+    100% { background: var(--rosa-intenso); }
+}
+
+.corazon-css::before,
+.corazon-css::after {
+    animation: cambioColor 6s infinite alternate;
+}
+
+/* Firma "con amor david" con misma animación de colores */
+.firma-amor {
+    font-size: 1.8rem;
+    font-family: var(--fuente-principal);
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 0.5rem;
+    animation: cambioColorTexto 6s infinite alternate;
+}
+
+@keyframes cambioColorTexto {
+    0% { color: var(--rosa-intenso); }
+    25% { color: var(--purpura); }
+    50% { color: var(--rojo-vibrante); }
+    75% { color: var(--amarillo-estrella); }
+    100% { color: var(--rosa-intenso); }
+}
+
+/* Latido suave para el corazón */
+@keyframes latidoSuave {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* Ajuste responsive */
+@media (max-width: 650px) {
+    .corazon-css {
+        width: 80px;
+        height: 72px;
+    }
+    .corazon-css::before,
+    .corazon-css::after {
+        width: 42px;
+        height: 64px;
+    }
+    .corazon-css::before {
+        left: 40px;
+    }
+    .firma-amor {
+        font-size: 1.4rem;
+    }
+    .promesa-final {
+        font-size: 0.95rem;
+    }
+}

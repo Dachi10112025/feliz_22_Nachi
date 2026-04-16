@@ -1,12 +1,24 @@
 // ========================  CARTA FINITA (sin scroll infinito) ========================
 const CONTENIDO_CARTA = `
-    <p>Querida nath,</p>
+    <!-- Saludo destacado -->
+    <p class="saludo-destacado">Querida nath,</p>
+    
     <p>Feliz cumpleaños mi amor, cumpliste 20 años nath ... ¡20! Quiero que sientas mi abrazo más fuerte, mi beso más profundo y que mis manos estén tomando las tuyas, porque mi corazón está tan feliz de poder estar a tu lado en uno de los muchos momentos que quiero pasar en tu vida ❤️.</p>
+    
+    <!-- Imagen 1-dachi -->
+    <div class="imagen-carta">
+        <img src="Assets/img/1-dachi.jpg" alt="Takkar y Nath" class="img-responsive">
+    </div>
     
     <div class="verso">“SABES PERFECTAMENTE que desde el primer momento en donde nos vimos a los ojos, no fue solamente amor, fue conexión... Algo que es inusual encontrar en la vida, pero encontré algo mucho más difícil en esta que eso.”</div>
     
     <p><strong>TE ENCONTRÉ A TI</strong><br>
     Llegaste cuando mi corazón se estaba rindiendo ante la corrupción de la desdicha, recibiéndolo con tus manos tan gentiles y delicadas, incluso antes de ser algo más que amigos.</p>
+    
+    <!-- Imagen 2-notificacion -->
+    <div class="imagen-carta">
+        <img src="Assets/img/2-notificacion.jpg" alt="Notificación de amor" class="img-responsive">
+    </div>
     
     <p>Nunca pensé amar tanto a alguien como lo estoy haciendo contigo, de una forma tan fuerte y extensamente.</p>
     
@@ -17,6 +29,11 @@ const CONTENIDO_CARTA = `
     <p><strong>MI CORAZÓN ES TUYO</strong> desde que me incluiste en tu futuro, en tus metas, en tu vida ✨<br>
     Desde que compartimos nuestros anhelos de estar juntos, casarme contigo, tener una familia, tener hijos, envejecer tomados de la mano.<br>
     Desde que comencé a soñar contigo cada noche y todo me hace tan feliz que mi corazón salta de alegría y nervios cada vez que te veo.</p>
+    
+    <!-- Imagen 2-creeper -->
+    <div class="imagen-carta">
+        <img src="Assets/img/2-creeper.jpg" alt="Creeper de amor" class="img-responsive">
+    </div>
     
     <p>Me sorprende que incluso viviendo tan lejos el uno del otro, lo que sentimos es tan fuerte que pudimos con todo.</p>
     
@@ -35,6 +52,12 @@ const CONTENIDO_CARTA = `
     Amo todos nuestros planes de películas, llamadas.<br>
     Cada día es bueno con solo recordarte.</p>
     
+    <!-- Imagenes lado A y lado B (juntas) -->
+    <div class="imagenes-pareja">
+        <img src="Assets/img/3-1-lado-a.jpg" alt="Lado A - Takkar" class="img-mitad">
+        <img src="Assets/img/3-1-lado-b.jpeg" alt="Lado B - Nath" class="img-mitad">
+    </div>
+    
     <div class="firma-final">
         SIEMPRE ESTARÉ PARA TI<br>
         EN LAS BUENAS Y EN LAS MALAS<br>
@@ -45,8 +68,20 @@ const CONTENIDO_CARTA = `
     
     <!-- Contenedor donde se insertará dinámicamente la lista de idiomas -->
     <div id="loveRotatorContainer" class="love-rotator-inside"></div>
+    
+    <!-- NUEVA SECCIÓN: párrafo de promesa -->
+    <div class="promesa-final">
+        <p>siempre te amaré como el primer día, no importa los inconvenientes, los malentendidos, las posibles peleas, siempre estaré dispuesto a arreglar las cosas contigo y superar los malos pensamientos, para tener buenos momentos juntos.</p>
+    </div>
+    
+    <!-- CORAZÓN ANIMADO Y FIRMA -->
+    <div class="corazon-final">
+        <div class="corazon-css"></div>
+        <div class="firma-amor">con amor david</div>
+    </div>
 `;
 
+// El resto del código (audio, apertura de sobre, etc.) se mantiene igual
 let audioElement = document.getElementById('musicaFondo');
 let videoBg = document.getElementById('bg-video');
 
@@ -97,7 +132,6 @@ function abrirCarta() {
             if (pergaminoElem) pergaminoElem.classList.add('carta-entrada');
             window.scrollTo({ top: 0, behavior: 'smooth' });
             
-            // === INICIAR EL ROTADOR DE 100 IDIOMAS (lista dinámica) ===
             if (typeof window.iniciarRotadorEnContenedor === 'function') {
                 window.iniciarRotadorEnContenedor('loveRotatorContainer', 24);
             }
