@@ -1,27 +1,50 @@
 // ========================  CARTA FINITA (sin scroll infinito) ========================
 const CONTENIDO_CARTA = `
-    <p>Dearest Nath,</p>
-    <p>Desde el momento en que tus ojos cruzaron los míos, el mundo cobró un color que nunca supe que existía. No fue casualidad, fue un susurro del universo que me señalaba el camino hacia ti. Cada latido de mi corazón aprendió un nuevo idioma: el tuyo. Y desde entonces, sólo sé hablar de amor en tu nombre.</p>
-    <p>Eres la melodía silenciosa que guía mi alma, la luz suave que disipa mis miedos. He escrito este pergamino para recordarte que mi amor por ti es profundo y sincero, y que cada día descubro una nueva razón para amarte más.</p>
-    <div class="verso">“Si pudiera regalarte una sola cosa, sería la capacidad de verme a través de mis ojos. Así sabrías lo infinita que eres para mí.”</div>
-    <p>Recuerdo la primera vez que escuché tu risa a través de una llamada. El mundo se detuvo. Las palabras se volvieron poesía y el silencio entre frase y frase se llenó de promesas. Las llamadas contigo nunca son simples conversaciones; son cartas sonoras, abrazos de voz, el único lugar donde el tiempo me pertenece.</p>
-    <h2>✧ Eres mi primavera perpetua ✧</h2>
-    <p>He guardado cada mensaje, cada “te quiero” dicho al viento. Nath, eres el sueño del que nunca quiero despertar. En los días grises, tu recuerdo es mi sol. En las noches largas, tu nombre es mi oración.</p>
-    <p>Me he imaginado un futuro a tu lado: un jardín donde los tulipanes crecen en los bordes de nuestra casa, tardes de té y conversaciones que duran hasta el amanecer, y un teléfono que nunca deja de sonar con la melodía de tu voz. Porque lo nuestro es atemporal, como las estrellas que nos vieron nacer.</p>
-    <div class="verso">“Amar a Nath no es una elección, es el latido que me fue dado antes de nacer.”</div>
-    <p>Te escribo esta carta porque mereces saberlo siempre. Eres mi confidente, mi complicidad, el hogar que llevo dondequiera que vaya. Tu risa es mi canción favorita, tu mirada es mi refugio. Cada día descubro una nueva razón para agradecer que existas.</p>
-    <h2>🌸 Fragmentos de un amor sincero 🌸</h2>
-    <p>¿Sabes lo que más admiro de ti? Tu manera de hacer sencillo lo complicado, de llenar de luz incluso los rincones más oscuros. Eres valiente, genuina y posees una ternura que desarma cualquier tormenta. A tu lado he aprendido que el amor verdadero no se gasta, se multiplica.</p>
-    <p>Cada vez que me llamas, siento que florecen jardines enteros en mi pecho. Las palabras se vuelven pétalos y los silencios, caricias.</p>
-    <div class="verso">“Nath, si tuviera que elegir entre el aire y tu voz, elegiría tu voz mil veces.”</div>
-    <p>El tiempo pasa, pero nuestro amor se vuelve más profundo como el vino más añejo. He guardado cada instante a tu lado como un tesoro. Desde aquella primera llamada hasta las madrugadas en vela compartiendo secretos. Eres mi cómplice, mi amiga, mi todo.</p>
-    <h2>📞 El eco de tu voz en mi alma 📞</h2>
-    <p>Las llamadas contigo se han convertido en el ritual más sagrado de mis días. No importa si hablamos de lo cotidiano o de nuestros sueños más profundos, tu voz es un bálsamo que cura cualquier herida. Por eso siempre tendrás mi atención, mi tiempo y mi corazón dispuesto a escucharte.</p>
-    <p>Si el destino nos puso a prueba con la distancia, el amor respondió con creces: convirtió cada teléfono en un puente, cada mensaje en un poema. Eres mi Norte, mi Sur, mi Este y mi Oeste. Eres el mapa y el tesoro al mismo tiempo.</p>
-    <div class="verso">“No necesito un mapa, porque mi brújula siempre apunta hacia ti.”</div>
-    <p>Nath, he escrito estas líneas con la esperanza de que las leas y las releas, y que en cada lectura encuentres una nueva promesa. Te prometo seguir cultivando este amor con la misma devoción del primer día. Te prometo estar, aunque sea en llamada, para celebrar tus triunfos y abrazar tus penas.</p>
-    <p>Y cuando el mundo se sienta pesado, recuerda esta carta. Recuerda que en algún lugar, Danchi está pensando en ti, escribiendo versos para ti, esperando con ansias la próxima vez que escuche tu voz.</p>
-    <div class="firma-final">Con devoción eterna,<br>Tu Danchi. ❤️</div>
+    <p>Querida nath,</p>
+    <p>Feliz cumpleaños mi amor, cumpliste 20 años nath ... ¡20! Quiero que sientas mi abrazo más fuerte, mi beso más profundo y que mis manos estén tomando las tuyas, porque mi corazón está tan feliz de poder estar a tu lado en uno de los muchos momentos que quiero pasar en tu vida ❤️.</p>
+    
+    <div class="verso">“SABES PERFECTAMENTE que desde el primer momento en donde nos vimos a los ojos, no fue solamente amor, fue conexión... Algo que es inusual encontrar en la vida, pero encontré algo mucho más difícil en esta que eso.”</div>
+    
+    <p><strong>TE ENCONTRÉ A TI</strong><br>
+    Llegaste cuando mi corazón se estaba rindiendo ante la corrupción de la desdicha, recibiéndolo con tus manos tan gentiles y delicadas, incluso antes de ser algo más que amigos.</p>
+    
+    <p>Nunca pensé amar tanto a alguien como lo estoy haciendo contigo, de una forma tan fuerte y extensamente.</p>
+    
+    <div class="verso">“ERES LA MUJER QUE NUNCA PENSÉ, PERO SÍ LA QUE MÁS DESEABA 💜”</div>
+    
+    <p>Nunca llegué a pensar que una chica que comenzó siendo mi amiga terminaría siendo aquella en la que pensaría todos los días sin perder ni un solo día la intensidad de mis sentimientos.</p>
+    
+    <p><strong>MI CORAZÓN ES TUYO</strong> desde que me incluiste en tu futuro, en tus metas, en tu vida ✨<br>
+    Desde que compartimos nuestros anhelos de estar juntos, casarme contigo, tener una familia, tener hijos, envejecer tomados de la mano.<br>
+    Desde que comencé a soñar contigo cada noche y todo me hace tan feliz que mi corazón salta de alegría y nervios cada vez que te veo.</p>
+    
+    <p>Me sorprende que incluso viviendo tan lejos el uno del otro, lo que sentimos es tan fuerte que pudimos con todo.</p>
+    
+    <div class="verso">“TE AMO por todo lo que me has dado incondicionalmente, por la mujer que eres, por la mujer en la que te estás convirtiendo, de forma tan orgullosa quiero decirte que tu forma de amar es lo más hermoso que seré capaz de sentir en toda mi vida.”</div>
+    
+    <p>Gracias por escogerme tal y como soy.<br>
+    Gracias por existir y entrar a mi vida.<br>
+    Gracias por amarme con todo tu corazón.</p>
+    
+    <p><strong>ERES LA MUJER QUE AMARÉ TODA LA VIDA</strong><br>
+    eres única, increíble e inigualable, eres hermosa, espléndida, bella, coqueta, especial, bonita, inteligente, valiente, bondadosa, amable, cariñosa...</p>
+    
+    <p>Quiero hacer realidad cada plan que hacemos para el futuro.<br>
+    Valoro cada "te amo" que nos decimos y nos escribimos.<br>
+    Aprecio cada desvelo en los que estuvimos juntos.<br>
+    Amo todos nuestros planes de películas, llamadas.<br>
+    Cada día es bueno con solo recordarte.</p>
+    
+    <div class="firma-final">
+        SIEMPRE ESTARÉ PARA TI<br>
+        EN LAS BUENAS Y EN LAS MALAS<br>
+        SOY TUYO JUNTO A MI CORAZÓN<br>
+        TE AMO<br>
+        EN ESTE Y EN 100 IDIOMAS DIFERENTES
+    </div>
+    
+    <!-- Contenedor donde se insertará dinámicamente la lista de idiomas -->
+    <div id="loveRotatorContainer" class="love-rotator-inside"></div>
 `;
 
 let audioElement = document.getElementById('musicaFondo');
@@ -48,21 +71,15 @@ function abrirCarta() {
     if (isOpen) return;
     isOpen = true;
 
-    // 1. Quitar el pulso inmediatamente para que no interfiera
     sobreAnimado.classList.remove('pulso');
-    // 2. Iniciar animación de la solapa (muy lenta, 4 segundos)
     sobreAnimado.classList.add('abierto');
 
-    // 3. Esperar 4.5 segundos (para que la solapa termine y el sobre se mueva)
     setTimeout(() => {
-        // Mover el wrapper del sobre hacia arriba (transición lenta definida en CSS)
         sobreWrapper.classList.add('sobre-arriba');
 
-        // Mostrar el contenedor de la carta (invisible aún)
         cartaContainer.style.display = 'block';
         cartaContainer.style.opacity = '0';
 
-        // Inyectar el contenido de la carta
         cartaContainer.innerHTML = `
             <div class="modo-lectura">
                 <div class="carta-pergamino" id="pergaminoDinamico">
@@ -73,15 +90,19 @@ function abrirCarta() {
             </div>
         `;
 
-        // Pequeña pausa adicional para que el DOM se actualice y luego hacer fade in
         setTimeout(() => {
-            cartaContainer.style.transition = 'opacity 1.2s ease';
+            cartaContainer.style.transition = 'opacity 0.6s ease';
             cartaContainer.style.opacity = '1';
             const pergaminoElem = document.querySelector('.carta-pergamino');
             if (pergaminoElem) pergaminoElem.classList.add('carta-entrada');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // === INICIAR EL ROTADOR DE 100 IDIOMAS (lista dinámica) ===
+            if (typeof window.iniciarRotadorEnContenedor === 'function') {
+                window.iniciarRotadorEnContenedor('loveRotatorContainer', 24);
+            }
         }, 100);
-    }, 4500); // 4.5 segundos, sincronizado con la animación lenta
+    }, 4500);
 }
 
 function handleFirstInteraction() {
@@ -114,7 +135,7 @@ window.addEventListener('wheel', function(e) {
 window.addEventListener('load', () => {
     if (videoBg) videoBg.play().catch(e => console.log("Video autoplay bloqueado"));
     iniciarAudioAutomatico();
-    console.log("✨ Carta de amor lista. Haz clic en el sello para abrirla lentamente (4.5 segundos de animación). ✨");
+    console.log("✨ Carta de amor lista. Haz clic en el sello para abrirla lentamente (4.5 segundos). ✨");
 });
 
 document.body.addEventListener('click', function() {

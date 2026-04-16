@@ -1,0 +1,77 @@
+/* Contenedor de la lista de "Te amo" - SIN scroll, SIN círculos */
+.love-list-container {
+    margin: 2rem 0 1.5rem;
+    padding: 1rem 0;
+    border-top: 2px dashed var(--rosa-intenso);
+    border-bottom: 2px dashed var(--rosa-suave);
+    overflow-x: hidden;  /* elimina scroll horizontal */
+}
+
+.love-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.love-item {
+    font-family: var(--fuente-principal);
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.3rem 0.5rem;
+    transition: all 0.4s ease;
+    display: block;
+    width: 100%;
+    line-height: 1.4;
+    word-break: break-word;
+    white-space: normal;
+    border-radius: 0;      /* sin bordes redondeados */
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    opacity: 0.9;
+}
+
+/* Alineaciones flotantes */
+.love-item.left {
+    text-align: left;
+    margin-right: auto;
+}
+.love-item.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.love-item.right {
+    text-align: right;
+    margin-left: auto;
+}
+
+/* Colores temáticos (se asignan dinámicamente) */
+.love-item.color-rosa { color: var(--rosa-intenso); }
+.love-item.color-purpura { color: var(--purpura); }
+.love-item.color-rojo { color: var(--rojo-vibrante); }
+.love-item.color-marron { color: var(--marron-oscuro); }
+.love-item.color-rosa-suave { color: var(--rosa-suave); }
+
+/* Animación suave al cambiar frase/color */
+.love-item.changing {
+    animation: gentleFade 0.5s ease;
+}
+
+@keyframes gentleFade {
+    0% { opacity: 0.4; transform: translateX(3px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive: tamaño más pequeño en móviles */
+@media (max-width: 650px) {
+    .love-item {
+        font-size: 0.95rem;
+    }
+    .love-list {
+        gap: 0.5rem;
+    }
+}

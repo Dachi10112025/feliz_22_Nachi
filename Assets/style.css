@@ -1,11 +1,5 @@
-/* ------------------------------
-   IMPORTA LA FUENTE DE GOOGLE
---------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap');
 
-/* ------------------------------
-   VARIABLES CSS
---------------------------------- */
 :root {
     --rosa-intenso: #E63976;
     --rosa-suave: #F9B2D7;
@@ -94,7 +88,6 @@ body {
     background: var(--rosa-intenso);
     clip-path: polygon(0% 0%, 100% 0%, 50% 45%);
     transform-origin: top;
-    /* ANIMACIÓN LENTA: 4 SEGUNDOS */
     transition: transform 4s cubic-bezier(0.4, 0.0, 0.2, 1);
     z-index: 3;
     border-radius: 12px 12px 0 0;
@@ -215,7 +208,7 @@ body {
     margin: 1.2rem 0;
 }
 .firma-final {
-    text-align: right;
+    text-align: center;
     margin-top: 2.5rem;
     font-size: 1.2rem;
     border-top: 1px dashed #c7a47b;
@@ -247,6 +240,14 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Contenedor del rotador dentro de la carta */
+.love-rotator-inside {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    border-top: 2px dashed transparent;
 }
 
 @media (max-width: 650px) {
